@@ -1,0 +1,15 @@
+@font-face {
+  font-family: 'Muli';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Muli Light'), local('Muli-Light'), url(../fonts/Muli/Muli-Light.ttf) format('truetype'), url(../fonts/Muli/Muli-Light.woff2) format('woff2'), url(../fonts/Muli/Muli-Light.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Muli';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/Muli/Muli-Regular.eot);
+  src: local('Muli Regular'), local('Muli-Regular'), local('Muli'), url(../fonts/Muli/Muli-Regular.svg#Muli) format('svg'), url(../fonts/Muli/Muli-Regular.ttf) format('truetype'), url(../fonts/Muli/Muli-Regular.eot?#iefix) format('embedded-opentype'), url(../fonts/Muli/Muli-Regular.woff2) format('woff2'), url(../fonts/Muli/Muli-Regular.woff) format('woff');
+}
+

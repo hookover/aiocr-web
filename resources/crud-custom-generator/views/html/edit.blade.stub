@@ -1,0 +1,37 @@
+@extends('layouts.backend')
+
+@section('content')
+@if ($errors->any())
+    <ul class="alert alert-danger">
+         @foreach ($errors->all() as $error)
+              <li>{{ $error }}</li>
+         @endforeach
+    </ul>
+@endif
+<div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">
+                        Edit %%modelName%% #{{ $%%crudNameSingular%%->%%primaryKey%% }}
+                    </h4>
+                    <p class="category">
+                        <a href="{{ url('/%%routeGroup%%%%viewName%%') }}" title="Back"><button class="btn btn-warning btn-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
+                    </p>
+                </div>
+                <div class="card-content">
+
+                    <form method="POST" action="{{ url('/%%routeGroup%%%%viewName%%/' . $%%crudNameSingular%%->%%primaryKey%%) }}"
+                    accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
+                    {{ method_field('PATCH') }}
+                    {{ csrf_field() }}
+
+                    @include ('%%viewTemplateDir%%.form', ['submitButtonText' => 'Update'])
+
+                    </form>
+                </div>
+            </div>  <!-- end card -->
+        </div>
+    </div>
+
+@endsection

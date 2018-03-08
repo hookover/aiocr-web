@@ -1,0 +1,116 @@
+#管理员
+php artisan crud:controller Admin/AdminController --crud-name=admin --model-name="Admin" --model-namespace="Models\\" --view-path="admin" --route-group=admin  --fields='admin_id#number;username#string;email#email;status_account#number;count_login#number;ip_register#string;ip_last_login#string;time_pre_login#string;time_last_login#string;created_at#string'
+
+php artisan crud:view admin --view-path="admin" --route-group=admin --form-helper=search --fields='admin_id#number;username#string;email#email;status_account#number;count_login#number;ip_register#string;ip_last_login#string;time_pre_login#string;time_last_login#string;created_at#string'
+
+#用户表
+php artisan crud:controller Admin/UserController --crud-name=user --model-name="User" --model-namespace="Models\\" --view-path="admin" --route-group=admin --fields='id#number;user_id#number;email#string;username#string;phone#string;qq#string;alipay#string;tenpay#string;vip_point#string;locking_ip#string;locking_address#string;point_pay_total#string;point_pay_current#string;point_locking#string;status_account#number;count_login#number;ip_register#string;ip_pre_login#string;ip_last_login#string;time_pre_login#string;time_last_login#string'
+
+php artisan crud:view user --view-path="admin" --route-group=admin --form-helper=search --fields='id#number;user_id#number;email#string;username#string;phone#string;qq#string;alipay#string;tenpay#string;vip_point#string;locking_ip#string;locking_address#string;point_pay_total#string;point_pay_current#string;point_locking#string;status_account#number;count_login#number;ip_register#string;ip_pre_login#string;ip_last_login#string;time_pre_login#string;time_last_login#string'
+
+
+#开发者表
+php artisan crud:controller Admin/DeveloperController --crud-name=developer --model-name="Developer" --model-namespace="Models\\" --view-path="admin" --route-group=admin --fields='id#number;developer_id#string;email#string;username#string;phone#string;real_name#string;qq#string;alipay#string;tenpay#string;point_pay_total#string;point_pay_current#string;point_dividend_total#string;point_dividend_current#string;vip_point#string;status_account#string;locking_ip#string;locking_address#string;count_login#string;ip_register#string;ip_pre_login#string;ip_last_login#string;time_pre_login#string;time_last_login#string'
+
+php artisan crud:view developer --view-path="admin" --route-group=admin --form-helper=search --fields='id#number;developer_id#string;email#string;username#string;phone#string;real_name#string;qq#string;alipay#string;tenpay#string;point_pay_total#string;point_pay_current#string;point_dividend_total#string;point_dividend_current#string;vip_point#string;status_account#string;locking_ip#string;locking_address#string;count_login#string;ip_register#string;ip_pre_login#string;ip_last_login#string;time_pre_login#string;time_last_login#string'
+
+#APP表
+php artisan crud:controller Admin/AppController --crud-name=app --model-name="App" --model-namespace="Models\\" --view-path="admin" --route-group=admin --fields='id#number;app_id#string;app_key#string;developer_id#string;name#string;status#string;developer_id_created#string;ip#string;created_at#string'
+
+php artisan crud:view app --view-path="admin" --route-group=admin --form-helper=search --fields='id#number;app_id#string;app_key#string;developer_id#string;name#string;status#string;developer_id_created#string;ip#string;created_at#string'
+
+
+#files表（识别日志）
+php artisan crud:controller Admin/FileController --crud-name=file --model-name="File" --model-namespace="Models\\" --view-path="admin" --route-group=admin --fields='uuid#string;url#string;path#string;status#string;result#string;file_type_id#string;app_id#string;user_id#string;developer_id#string;cost#string;ip#string;created_at#string'
+
+php artisan crud:view file --view-path="admin" --route-group=admin --form-helper=search --fields='uuid#string;url#string;path#string;status#string;result#string;file_type_id#string;app_id#string;user_id#string;developer_id#string;cost#string;ip#string;created_at#string'
+
+
+#file_types表（验证码类型）
+php artisan crud:controller Admin/FileTypeController --crud-name=file_type --model-name="FileType" --model-namespace="Models\\" --view-path="admin" --route-group=admin --fields='id#number;file_type_id#string;cost#string;length#string;name#string;description#string;ai_enable#string;status#string'
+
+php artisan crud:view file_type --view-path="admin" --route-group=admin --form-helper=search --fields='id#number;file_type_id#string;cost#string;length#string;name#string;description#string;ai_enable#string;status#string'
+
+
+#cards表（充值卡管理）
+php artisan crud:controller Admin/CardController --crud-name=card --model-name="Card" --model-namespace="Models\\" --view-path="admin" --route-group=admin --fields='id#number;developer_id#string;user_id#string;point_before#string;point_after#string;card#string;point#string;money#string;ip_used#string;ip_created#string;status#string;time_used#string;created_at#string'
+
+php artisan crud:view card --view-path="admin" --route-group=admin --form-helper=search --fields='id#number;developer_id#string;user_id#string;point_before#string;point_after#string;card#string;point#string;money#string;ip_used#string;ip_created#string;status#string;time_used#string;created_at#string'
+
+
+#withdraws表（提现管理）
+php artisan crud:controller Admin/WithdrawController --crud-name=withdraw --model-name="Withdraw" --model-namespace="Models\\" --view-path="admin" --route-group=admin --fields='id#number;uuid#string;developer_id#string;channel_id#string;real_name#string;account#string;money#string;point#string;point_before#string;point_after#string;description#string;admin_id#string;status#string;ip_created#string;ip_admin#string;done_at#string;created_at#string'
+
+php artisan crud:view withdraw --view-path="admin" --route-group=admin --form-helper=search --fields='id#number;uuid#string;developer_id#string;channel_id#string;real_name#string;account#string;money#string;point#string;point_before#string;point_after#string;description#string;admin_id#string;status#string;ip_created#string;ip_admin#string;done_at#string;created_at#string'
+
+
+#payments表（充值记录）
+php artisan crud:controller Admin/PaymentController --crud-name=payment --model-name="Payment" --model-namespace="Models\\" --view-path="admin" --route-group=admin --fields='id#number;payment_id#string;pay_channel_id#string;channel_order_number#string;user_type#string;uid#string;money#string;actual_money#string;point#string;point_before#string;point_after#string;description#string;admin_id#string;status#string;ip#string;done_at#string;created_at#string'
+
+php artisan crud:view payment --view-path="admin" --route-group=admin --form-helper=search --fields='id#number;payment_id#string;pay_channel_id#string;channel_order_number#string;user_type#string;uid#string;money#string;actual_money#string;point#string;point_before#string;point_after#string;description#string;admin_id#string;status#string;ip#string;done_at#string;created_at#string'
+
+
+#payment_gifts表（充值赠送）
+php artisan crud:controller Admin/PaymentGiftController --crud-name=payment_gift --model-name="PaymentGift" --model-namespace="Models\\" --view-path="admin" --route-group=admin --fields='id#number;condition_money#string;gift_money#string;status#string;type#string;expiration#string;created_at#string'
+
+php artisan crud:view payment_gift --view-path="admin" --route-group=admin --form-helper=search --fields='id#number;condition_money#string;gift_money#string;status#string;type#string;expiration#string;created_at#string'
+
+
+#developer_logs表（开发者登录日志）
+php artisan crud:controller Admin/DeveloperLogController --crud-name=developer_log --model-name="DeveloperLog" --model-namespace="Models\\" --view-path="admin" --route-group=admin --fields='id#number;developer_id#string;type#string;desc#string;browser_info#string;ip#string;created_at#string'
+
+php artisan crud:view developer_log --view-path="admin" --route-group=admin --form-helper=search --fields='id#number;developer_id#string;type#string;desc#string;browser_info#string;ip#string;created_at#string'
+
+
+#user_logs表（用户登录日志）
+php artisan crud:controller Admin/UserLogController --crud-name=user_log --model-name="UserLog" --model-namespace="Models\\" --view-path="admin" --route-group=admin --fields='id#number;user_id#string;type#string;desc#string;browser_info#string;ip#string;created_at#string'
+
+php artisan crud:view user_log --view-path="admin" --route-group=admin --form-helper=search --fields='id#number;user_id#string;type#string;desc#string;browser_info#string;ip#string;created_at#string'
+
+
+#password_developer_resets表（开发者密码重置）
+php artisan crud:controller Admin/PasswordDeveloperResetController --crud-name=password_developer_reset --model-name="PasswordDeveloperReset" --model-namespace="Models\\" --view-path="admin" --route-group=admin --fields='email#string;token#string;created_at#string'
+
+php artisan crud:view password_developer_reset --view-path="admin" --route-group=admin --form-helper=search --fields='email#string;token#string;created_at#string'
+
+
+#password_user_resets表（用户密码重置）
+php artisan crud:controller Admin/PasswordUserResetController --crud-name=password_user_reset --model-name="PasswordUserReset" --model-namespace="Models\\" --view-path="admin" --route-group=admin --fields='email#string;token#string;created_at#string'
+
+php artisan crud:view password_user_reset --view-path="admin" --route-group=admin --form-helper=search --fields='email#string;token#string;created_at#string'
+
+
+#news表
+php artisan crud:controller Admin/NewsController --crud-name=news --model-name="News" --model-namespace="Models\\" --view-path="admin" --route-group=admin --fields='id#number;category_id#string;title#string;keywords#string;description#string;content#string;admin_id#string;slug#string;status#string'
+
+php artisan crud:view news --view-path="admin" --route-group=admin --form-helper=search --fields='id#number;category_id#string;title#string;keywords#string;description#string;content#string;admin_id#string;slug#string;status#string'
+
+
+#server_ids表
+php artisan crud:controller Admin/ServerIDController --crud-name=server_id --model-name="ServerID" --model-namespace="Models\\" --view-path="admin" --route-group=admin --fields='id#number;server_id#string;server_type#string;server_img_url#string;server_api_url#string;server_api_weight#string;status#string;created_at#string'
+
+php artisan crud:view server_id --view-path="admin" --route-group=admin --form-helper=search --fields='id#number;server_id#string;server_type#string;server_img_url#string;server_api_url#string;server_api_weight#string;status#string;created_at#string'
+
+
+#contact_us表(联系我们)
+php artisan crud:controller Admin/ContactUsController --crud-name=contact_us --model-name="ContactUs" --model-namespace="Models\\" --view-path="admin" --route-group=admin --fields='id#number;name#string;email#string;phone#string;wechat#string;content#string;created_at#string'
+
+php artisan crud:view contact_us --view-path="admin" --route-group=admin --form-helper=search --fields='id#number;name#string;email#string;phone#string;wechat#string;content#string;created_at#string'
+
+
+#statistical_reports_admin表
+php artisan crud:controller Admin/StatisticalReportsAdminController --crud-name=statistical_reports_admin --model-name="StatisticalReportsAdmin" --model-namespace="Models\\" --view-path="admin" --route-group=admin --fields='created_at#string;number#string;points#string'
+
+php artisan crud:view statistical_reports_admin --view-path="admin" --route-group=admin --form-helper=search --fields='created_at#string;number#string;points#string'
+
+
+#statistical_reports_developer表
+php artisan crud:controller Admin/StatisticalReportsDeveloperController --crud-name=statistical_reports_developer --model-name="StatisticalReportsDeveloper" --model-namespace="Models\\" --view-path="admin" --route-group=admin --fields='developer_id#string;created_at#string;number#string;points#string;dividend#string'
+
+php artisan crud:view statistical_reports_developer --view-path="admin" --route-group=admin --form-helper=search --fields='developer_id#string;created_at#string;number#string;points#string;dividend#string'
+
+
+#statistical_reports_user表
+php artisan crud:controller Admin/StatisticalReportsUserController --crud-name=statistical_reports_user --model-name="StatisticalReportsUser" --model-namespace="Models\\" --view-path="admin" --route-group=admin --fields='user_id#string;created_at#string;number#string;points#string;dividend#string'
+
+php artisan crud:view statistical_reports_user --view-path="admin" --route-group=admin --form-helper=search --fields='user_id#string;created_at#string;number#string;points#string'
